@@ -43,3 +43,28 @@ bum1:
    paddd mm0,mm1
    movq [vetorN],mm0
    movq mm0,[vetor]
+   movq mm1,[vetor4]
+   paddusb mm0,mm1
+   movq [vetorN1],mm0
+   movq mm0,[vetor3]
+   movq mm1,[vetor5]
+   paddw mm0,mm1
+   movq [vetorN2],mm0
+subtracao:
+   movq mm0,[vetor1] ;subtração
+   movq mm1,[vetor2]
+   psubd mm0,mm1
+   movq [vetorN],mm0
+   movq mm0,[vetor]
+   movq mm1,[vetor4]
+   psubusb mm0,mm1
+   movq [vetorN1],mm0
+   movq mm0,[vetor3]
+   movq mm1,[vetor5]
+   psubw mm0,mm1
+   movq [vetorN2],mm0
+   emms
+fim:
+mov eax, EXIT
+mov ebx,0
+int 0x80
